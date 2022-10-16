@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@evaluator/api-interfaces';
+import Button from './Components/button/button';
+import styles from './app.module.css'
+import NumberGrid from './Components/number-grid/number-grid';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
 
   return (
-    <div>
-      
+    <div className={styles['body']}>
+      <NumberGrid />
+      <div />
     </div>
   );
 };

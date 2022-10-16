@@ -1,12 +1,13 @@
 .btn {
     color: white;
+    font-family: Helvetica Bold;
     margin: 0.5em;
     border: none;
-    border-radius: 1em;
+    border-radius: 2em;
     font-size: 2em;
     width: 4em;
-    height: 3em;
-    transition: background-color 1000ms ease-in;
+    height: 4em;
+    transition: background-color 200ms ease-in;
 }
 
 .btn:hover {
@@ -17,6 +18,19 @@
     background-color: #F69906;
 }
 
+.actionBtn:hover {
+    background-color: #f1c277;
+}
+
 .numBtn {
     background-color: #313131;
+}
+
+.utility {
+    background-color: #A8A8A8;
+}
+
+.btn0 {
+    background-color: #313131;
+    width: 9em;
 }
