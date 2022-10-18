@@ -1,5 +1,18 @@
 /* Your styles goes here. */
-body{
+body {
     background-color: #000000;
+    font-family: 'Helvetica' bold;
     color: #FFFFFF;
-  }
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  flex-grow: 1;
+}  
+
+.number-grid {
+  flex-grow: 2;
+}

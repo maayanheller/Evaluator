@@ -1,5 +1,6 @@
 .btn {
     color: white;
+    background-color: #313131;
     font-family: Helvetica Bold;
     margin: 0.5em;
     border: none;
@@ -30,7 +31,6 @@
     background-color: #A8A8A8;
 }
 
-.btn0 {
-    background-color: #313131;
+.longBtn {
     width: 9em;
 }

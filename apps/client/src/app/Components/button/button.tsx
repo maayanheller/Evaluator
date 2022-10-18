@@ -3,7 +3,7 @@ import styles from './button.module.css';
 /* eslint-disable-next-line */
 export interface ButtonProps {
   value: string;
-
+  handleInput : any;
 }
 
 export function Button(props: ButtonProps) {
@@ -12,7 +12,7 @@ export function Button(props: ButtonProps) {
 
     switch (props.value) {
       case '0': 
-        className = 'btn0';
+        className = 'longBtn';
         break;
       case '1':
       case '2':
@@ -28,9 +28,7 @@ export function Button(props: ButtonProps) {
         break;
 
       case 'AC':
-      case '+/-':
-      case '%': 
-        className = 'utility';
+        className += 'utility';
         break;
       
       case '÷':
@@ -42,10 +40,13 @@ export function Button(props: ButtonProps) {
         break;
     }
 
-    return className;
+    return {
+      className,
+    };
   }
+
   return (
-    <input type="button" value={props.value} className={`${styles['btn']} ${styles[btnType()]}`} />
+    <input type="button" onClick={() => props.handleInput(props.value)} value={props.value} className={`${styles['btn']} ${styles[btnType().className]} ${props.value === 'AC' || props.value === '÷' ? styles['longBtn'] : {}}`} />
   );
 }
 
