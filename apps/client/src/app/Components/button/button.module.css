@@ -17,6 +17,7 @@
 
 .actionBtn {
     background-color: #F69906;
+    width: 9em;
 }
 
 .actionBtn:hover {
@@ -25,6 +26,12 @@
 
 .numBtn {
     background-color: #313131;
+}
+
+.minusBtn {
+    background-color: #F69906;
+    height: 9em;
+    position: absolute;
 }
 
 .utility {

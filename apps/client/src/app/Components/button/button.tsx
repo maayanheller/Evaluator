@@ -28,13 +28,13 @@ export function Button(props: ButtonProps) {
         break;
 
       case 'AC':
-        className += 'utility';
+        className = 'utility';
+        break;
+        case ' - ':
+        case ' + ':
+        className = 'minusBtn';
         break;
       
-      case '÷':
-      case '×':
-      case '-':
-      case '+':
       case '=':
         className = 'actionBtn';
         break;
