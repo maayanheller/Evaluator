@@ -1,8 +1,10 @@
 import * as express from 'express';
 import * as tf from '@tensorflow/tfjs-node';
+import * as path from 'path';
 import * as bodyParser from 'body-parser';
 
 const app = express();
+const CLIENT_BUILD_PATH = path.join(__dirname, '../client');
 const addition_model = tf.loadLayersModel('file://apps/api/src/assets/addition.model/additionModel.json');
 const subtruction_model = tf.loadLayersModel('file://apps/api/src/assets/subtruction.model/subtructionModel.json');
 const jsonParser = bodyParser.json()
@@ -13,6 +15,8 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+app.use(express.static(CLIENT_BUILD_PATH));
+
 
 const add = async(eq) => {
   try {
@@ -61,6 +65,10 @@ app.post('/api/calculate', jsonParser ,async (req, res) => {
   }
   
   
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(CLIENT_BUILD_PATH, 'index.html'));
 });
 
 const port = process.env.port || 3333;
